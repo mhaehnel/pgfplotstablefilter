@@ -1,0 +1,11 @@
+This is a latex package that extends pgfplotstable to provide a filtering
+mechanism. This is currently quite crude, but should be extensible.
+
+Please beware that this package relies on internal datastructure details of
+pgfplotstable and the pgfplotsliststructure. Should these change then this
+package might break.
+
+See demo.tex for an explanation how it works. It's really quite simple
+
+This package is licensed under the terms of the GPL Version 3. See the LICENSE file for the terms.
+
