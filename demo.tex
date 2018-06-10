@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\usepackage{pgfplotstable}
+\usepackage{pgfplotstablefilter}
+
+\usepackage{filecontents}
+\begin{filecontents}{test.csv}
+	x,y
+	22,1
+	1,2
+	2,4
+	3,8
+	4,16
+	22,33
+	5,25
+\end{filecontents}
+
+\pgfplotstableread[col sep=comma]{test.csv}\mytable
+
+\begin{document}
+\pgfplotstabletypeset{\mytable}%
+\pgfkeys{/pgfplots/table/col sep=comma}%
+\pgfplotstablefilter[x unequal 22]{\mytable}{\secondtable}%
+\pgfplotstablefilter[x equals 22]{test.csv}{\thirdtable}%
+\pgfplotstabletypeset{\secondtable}%
+\pgfplotstabletypeset{\thirdtable}%
+\end{document}
