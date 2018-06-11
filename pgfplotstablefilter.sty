@@ -50,7 +50,6 @@
 			\expandafter\edef\csname\string#3@@table@scanline\endcsname{\pgfplotstablescanlinelengthof{#2}}%
 			\pgfplotslistforeachungrouped#2\as\pgfplotstable@loc@TMPa{%
 					\pgfplotslistcopy\removerows\to\removerows@local
-					\PackageWarning{tablefilter}{Filtering table @ \pgfplotstable@loc@TMPa}{}%
 					\pgfplotslistnewempty\pgfplotstable@loc@TMPc
 					\pgfplotslistpopfrontorrelax\removerows@local\to\nextremove
 					\def\currow{0}%
