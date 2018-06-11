@@ -48,7 +48,6 @@
 			\pgfplotstablegetname#2\pgfplotstable@loc@TMPa
 			\expandafter\let\csname\string#3@@table@name\endcsname=\pgfplotstable@loc@TMPa
 			\expandafter\edef\csname\string#3@@table@scanline\endcsname{\pgfplotstablescanlinelengthof{#2}}%
-			\PackageWarning{tablefilter}{Filtering table with \pgfplotstable@loc@TMPa}{}%
 			\pgfplotslistforeachungrouped#2\as\pgfplotstable@loc@TMPa{%
 					\pgfplotslistcopy\removerows\to\removerows@local
 					\PackageWarning{tablefilter}{Filtering table @ \pgfplotstable@loc@TMPa}{}%
@@ -62,13 +61,11 @@
 							\expandafter\pgfplotslistpushback\pgfplotstable@loc@TMPb\to\pgfplotstable@loc@TMPc
 						\fi
 						\pgfplotsutil@advancestringcounter\currow
-						\PackageWarning{tablefilter}{Item: \pgfplotstable@loc@TMPb}%
 					}%
 					\expandafter\let\csname\string#3@\pgfplotstable@loc@TMPa\endcsname=\pgfplotstable@loc@TMPc
 			}%
 		}%
 	}{%Table 2 not yet loaded
-		\PackageWarning{tablefilter}{Loaded Table}{}%
 		\pgfplotstableread{#2}\pgfplotstable@tmptbl
 		\pgfplotstablefilter[#1]{\pgfplotstable@tmptbl}{#3}%
 	}%
